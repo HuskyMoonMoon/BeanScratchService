@@ -140,6 +140,11 @@ public class BeanDevice
         return true;
     }
 
+    public android.bluetooth.BluetoothDevice getBluetoothDevice()
+    {
+        return BluetoothDevice;
+    }
+
     public void setBluetoothDevice(android.bluetooth.BluetoothDevice bluetoothDevice)
     {
         BluetoothDevice = bluetoothDevice;

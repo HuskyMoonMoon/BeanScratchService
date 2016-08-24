@@ -46,17 +46,20 @@ public class BeanScratchService
         @Override
         public boolean add(BluetoothDevice bluetoothDevice)
         {
+            boolean isAdded = super.add(bluetoothDevice);
+
             if(OnBluetoothDeviceListChangedListener != null)
                 OnBluetoothDeviceListChangedListener.onBluetoothDeviceListChanged();
-            return super.add(bluetoothDevice);
+            return isAdded;
         }
 
         @Override
         public BluetoothDevice remove(int index)
         {
+            BluetoothDevice device = super.remove(index);
             if(OnBluetoothDeviceListChangedListener != null)
                 OnBluetoothDeviceListChangedListener.onBluetoothDeviceListChanged();
-            return super.remove(index);
+            return device;
         }
 
         @Override
